@@ -1,17 +1,22 @@
 {% extends "delivery/base.html" %}
-{% block title %}Order Summary{% endblock %}
+
+{% block title %}Order Successful - FinalMeal{% endblock %}
+
 {% block content %}
-<h1>Thank you for your order, {{ username }}!</h1>
+<div class="card" style="text-align: center; max-width: 600px;">
+    <div style="font-size: 5rem; margin-bottom: 1.5rem;">🎉</div>
+    <h2>Order Successful!</h2>
+    <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">Thank you for your order, {{ username }}!</p>
 
+    <div style="background: rgba(255, 107, 107, 0.05); padding: 1.5rem; border-radius: 16px; margin-bottom: 2rem; text-align: left;">
+        <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Delivery Address</h4>
+        <p style="color: var(--text-main);">{{ customer.address }}</p>
+    </div>
 
-    <h2>Delivery Address</h2>
-    <p>{{ customer.address }}</p>
+    <p style="margin-bottom: 2rem;">Your meal is being prepared and will be delivered shortly. Enjoy!</p>
 
-    <p>Your order will be delivered to this location shortly. Thank you for choosing Meal Mate!</p>
-
-    {% if cart_items %}
-        <a href="{% url 'customer_menu' cart_items.0.restaurant.id username %}">Back to Restaurants</a>
-    {% else %}
-        <a href="/">Back to Home</a>
-    {% endif %}
+    <a href="/" style="text-decoration: none;">
+        <button style="width: 100%;">Back to Home</button>
+    </a>
+</div>
 {% endblock %}

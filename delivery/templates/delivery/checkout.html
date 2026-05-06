@@ -1,71 +1,63 @@
 {% extends "delivery/base.html" %}
-{% block title %}Checkout{% endblock %}
+
+{% block title %}Checkout - FinalMeal{% endblock %}
+
 {% block content %}
-<h1>Checkout</h1>
-    <h2>Welcome, {{ username }}</h2>
+<div class="card" style="max-width: 600px;">
+    <h2>Checkout 💳</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">Confirm your order details, {{ username }}</p>
 
     {% if error %}
-    <p style="color: red;">{{ error }}</p>
+    <div style="background: rgba(255, 107, 107, 0.1); color: var(--primary); padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; text-align: center;">
+        {{ error }}
+    </div>
     {% else %}
+    <div style="width: 100%; margin-bottom: 2rem;">
+        <div style="display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #eee; font-weight: 600;">
+            <span>Item</span>
+            <span>Price</span>
+        </div>
+        {% for item in cart_items %}
+        <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #f9f9f9;">
+            <span>{{ item.name }}</span>
+            <span>₹{{ item.price }}</span>
+        </div>
+        {% endfor %}
+        <div style="display: flex; justify-content: space-between; padding: 1.5rem 0 0; font-size: 1.5rem; font-weight: 700;">
+            <span>Total</span>
+            <span style="color: var(--primary);">₹{{ total_price }}</span>
+        </div>
+    </div>
 
-
-
-
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Item</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for item in cart_items %}
-            <tr>
-                <td>{{ item.name }}</td>
-                <td>₹{{ item.price }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <h3>Total: ₹{{ total_price }}</h3>
-
-
-
-    
-
-    <button id="rzp-button">Pay with Razorpay</button>
+    <button id="rzp-button" style="width: 100%;">Pay with Razorpay</button>
     {% endif %}
+</div>
 
-
-    
-
-    <script>
-        var options = {
-            "key": "{{ rzp_test_lT6VV3Hhr4ayCQ }}",  // Razorpay API key
-            "amount": "{{ total_price|floatformat:2|add:'0.00'|floatformat:2 }}00", // Amount in paisa
-            "currency": "INR",
-            "name": "Meal Buddy",
-            "description": "Order Payment",
-            "order_id": "{{ order_id }}",  // Razorpay order ID
-            "handler": function (response) {
-                alert("Payment Successful!");
-                // Redirect to the orders page
-                window.location.href = "{% url 'orders' username %}";
-            },
-            "prefill": {
-                "name": "{{ username }}",
-                "email": "customer@example.com",
-                "contact": "9999999999"
-            },
-            "theme": {
-                "color": "#528FF0"
-            }
-        };
-        var rzp = new Razorpay(options);
-    
-        document.getElementById('rzp-button').onclick = function(e) {
-            rzp.open();
-            e.preventDefault();
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    var options = {
+        "key": "{{ razorpay_key_id }}",  // Use the key ID from views.py
+        "amount": "{{ amount|floatformat:0 }}00", // Amount in paisa
+        "currency": "INR",
+        "name": "FinalMeal",
+        "description": "Order Payment",
+        "order_id": "{{ order_id }}",
+        "handler": function (response) {
+            alert("Payment Successful!");
+            window.location.href = "{% url 'orders' username %}";
+        },
+        "prefill": {
+            "name": "{{ username }}",
+        },
+        "theme": {
+            "color": "#FF6B6B"
         }
-    </script>
+    };
+    var rzp = new Razorpay(options);
+
+    document.getElementById('rzp-button').onclick = function(e) {
+        rzp.open();
+        e.preventDefault();
+    }
+</script>
 {% endblock %}

@@ -1,25 +1,34 @@
 {% extends "delivery/base.html" %}
-{% block title %}Customer Home{% endblock %}
-{% block content %}
-<h2>Welcome, {{ username }}! 👋</h2>
-<p style="font-size: 1.1rem; color: #636e72; margin-bottom: 28px;">Explore our delicious restaurants and place your order</p>
 
-<div class="cards-grid">
-  {% for r in restaurantList %}
-  <div class="card">
-    <img src="{{ r.picture }}" alt="{{ r.name }}" class="card-image">
-    <div class="card-body">
-      <h3 class="card-title">{{ r.name }}</h3>
-      <div class="card-subtitle">
-        <span>🍽️ {{ r.cuisine }}</span>
-        <span>⭐ {{ r.rating }}</span>
-      </div>
-      <p style="font-size: 0.9rem; color: #636e72; margin: 12px 0;">Quality food & fast delivery</p>
-      <div class="card-actions">
-        <a href="{% url 'view_menu' r.id username %}" class="button" style="background: linear-gradient(135deg, #ff6b6b, #ff8787);">View Menu</a>
-      </div>
+{% block title %}Explore Restaurants - FinalMeal{% endblock %}
+
+{% block content %}
+<div style="width: 100%;">
+    <div style="margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Welcome, {{ username }}! 👋</h2>
+        <p style="font-size: 1.2rem; color: var(--text-muted);">What would you like to eat today?</p>
     </div>
-  </div>
-  {% endfor %}
+
+    <div class="cards-grid">
+        {% for r in restaurantList %}
+        <a href="{% url 'view_menu' r.id username %}" class="restaurant-card">
+            <div class="restaurant-image-container">
+                <img src="{{ r.picture }}" alt="{{ r.name }}" class="restaurant-image">
+            </div>
+            <div class="restaurant-info">
+                <h3>{{ r.name }}</h3>
+                <div class="restaurant-meta">
+                    <span class="cuisine-tag">{{ r.cuisine }}</span>
+                    <span class="rating-badge">⭐ {{ r.rating }}</span>
+                </div>
+                <button class="btn-view">View Menu</button>
+            </div>
+        </a>
+        {% empty %}
+        <div class="card" style="grid-column: 1 / -1; text-align: center;">
+            <p>No restaurants available yet. Check back soon!</p>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

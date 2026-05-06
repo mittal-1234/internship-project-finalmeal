@@ -1,9 +1,24 @@
 {% extends "delivery/base.html" %}
-{% block title %}Welcome page{% endblock %}
+{% load static %}
+
+{% block title %}FinalMeal - Premium Food Delivery{% endblock %}
+
 {% block content %}
-<h3>Welcome to Meal Buddy!</h3>
-<div style="display: flex; gap: 16px; margin-top: 24px;">
-    <a href="open_signup" class="button" style="background: linear-gradient(135deg, #4d8cf6, #5fc3ff);">SIGN UP</a>
-    <a href="open_signin" class="button" style="background: linear-gradient(135deg, #6c63ff, #a78bfa);">SIGN IN</a>
-</div>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Deliciousness Delivered to Your Door</h1>
+        <p>Experience the finest cuisines from your favorite local restaurants, delivered fresh and fast. Your final choice for every meal.</p>
+        <div class="cta-group">
+            <a href="{% url 'open_signup' %}" style="text-decoration: none;">
+                <button>Get Started</button>
+            </a>
+            <a href="{% url 'open_signin' %}" style="text-decoration: none;">
+                <button class="btn-secondary">Sign In</button>
+            </a>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="{% static 'delivery/images/hero.png' %}" alt="FinalMeal Gourmet Burger">
+    </div>
+</section>
 {% endblock %}

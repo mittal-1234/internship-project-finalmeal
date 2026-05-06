@@ -1,36 +1,50 @@
 {% extends "delivery/base.html" %}
-{% block title %}Your Cart{% endblock %}
+
+{% block title %}Your Cart - FinalMeal{% endblock %}
+
 {% block content %}
-<h2>🛒 Your Cart, {{ username }}</h2>
-
-{% if itemList %}
-<div class="cards-grid">
-  {% for item in itemList %}
-  <div class="card">
-    <img src="{{ item.picture }}" alt="{{ item.name }}" class="card-image">
-    <div class="card-body">
-      <h3 class="card-title">{{ item.name }}</h3>
-      <p style="font-size: 0.9rem; color: #636e72; margin: 0 0 12px;">{{ item.description }}</p>
-      <div class="card-subtitle">
-        <span>💰 ₹{{ item.price }}</span>
-      </div>
+<div style="width: 100%;">
+    <div style="margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Your Cart 🛒</h2>
+        <p style="font-size: 1.2rem; color: var(--text-muted);">Review your items before checkout, {{ username }}</p>
     </div>
-  </div>
-  {% endfor %}
-</div>
 
-<div style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 28px; margin-top: 28px; box-shadow: 0 10px 30px rgba(255, 100, 100, 0.1); text-align: center;">
-  <h3 style="color: #d63031; font-size: 1.8rem; margin: 0 0 24px;">Total: ₹{{ total_price }}</h3>
-  <form action="{% url 'checkout' username %}" style="margin: 0;">
-    <input type="submit" value="Proceed to Checkout" class="button" style="background: linear-gradient(135deg, #ff6b6b, #ff8787); padding: 14px 48px; font-size: 1.1rem;"/>
-  </form>
-</div>
+    {% if itemList %}
+    <div class="cards-grid">
+        {% for item in itemList %}
+        <div class="item-card">
+            <div class="item-header">
+                <img src="{{ item.picture }}" alt="{{ item.name }}" class="item-image">
+                <div class="item-details">
+                    <h4>{{ item.name }}</h4>
+                    <p>{{ item.description }}</p>
+                </div>
+            </div>
+            <div class="item-footer">
+                <span class="item-price">₹{{ item.price }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 
-{% else %}
-<div style="text-align: center; padding: 48px 24px;">
-  <h3 style="color: #636e72; margin-bottom: 16px;">Your cart is empty 😢</h3>
-  <p style="color: #999; margin-bottom: 24px;">Start adding items from restaurants to see them here</p>
-  <a href="/" class="button" style="background: linear-gradient(135deg, #ff6b6b, #ff8787);">← Back to Restaurants</a>
+    <div class="card" style="margin-top: 3rem; max-width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div style="text-align: center;">
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 0.5rem;">Order Total</p>
+            <h3 style="font-size: 2.5rem; color: var(--primary);">₹{{ total_price }}</h3>
+        </div>
+        <form action="{% url 'checkout' username %}" style="width: 100%; max-width: 400px;">
+            <button type="submit" style="width: 100%; padding: 1.2rem;">Proceed to Checkout</button>
+        </form>
+    </div>
+
+    {% else %}
+    <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <h3 style="margin-bottom: 1rem;">Your cart is empty 😢</h3>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Start adding items from restaurants to see them here.</p>
+        <a href="/" style="text-decoration: none;">
+            <button class="btn-secondary">← Back to Restaurants</button>
+        </a>
+    </div>
+    {% endif %}
 </div>
-{% endif %}
 {% endblock %}

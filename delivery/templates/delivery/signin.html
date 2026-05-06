@@ -1,18 +1,29 @@
 {% extends "delivery/base.html" %}
-{% block title %}Sign IN{% endblock %}
+
+{% block title %}Sign In - FinalMeal{% endblock %}
+
 {% block content %}
-<h3>SIGN IN below:</h3>
+<div class="card">
+    <h2>SIGN IN below:</h2>
 
     <form action="{% url 'signin' %}" method="post">
         {% csrf_token %}
-        <label>Username </label>
-        <input type="text" name="username">
-        <br><br>
-        <label>Password </label>
-        <input type="password" name="password">
-        <br><br>
         
-        <br><br>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        
         <button type="submit">SIGN IN</button>
     </form>
+
+    <div style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem;">
+        <p>Don't have an account? <a href="{% url 'open_signup' %}" style="color: var(--primary); font-weight: 600; text-decoration: none;">Sign Up</a></p>
+    </div>
+</div>
 {% endblock %}
