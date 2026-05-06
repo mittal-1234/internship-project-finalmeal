@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Restaurant</title>
-</head>
-<body>
-    <form action="{% url 'add_restaurant' %}" method="post">
+{% extends "delivery/base.html" %}
+{% block title %}New Restaurant{% endblock %}
+{% block content %}
+<form action="{% url 'add_restaurant' %}" method="post">
         {% csrf_token %}
         <label>Restaurant name </label>
         <input type="text" name="name">
@@ -23,5 +18,4 @@
         <br><br>
         <button type="submit">Add Restaurant</button>
     </form>
-</body>
-</html>
+{% endblock %}

@@ -43,16 +43,18 @@ def signin(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-    try:
-        Customer.objects.get(username = username, password = password)
-        if username == 'admin':
-            return render(request, 'delivery/admin_home.html')
-        else:
-            restaurantList = Restaurant.objects.all()
-            return render(request, 'delivery/customer_home.html',{"restaurantList" : restaurantList, "username" : username})
+        try:
+            Customer.objects.get(username = username, password = password)
+            if username == 'admin':
+                return render(request, 'delivery/admin_home.html')
+            else:
+                restaurantList = Restaurant.objects.all()
+                return render(request, 'delivery/customer_home.html',{"restaurantList" : restaurantList, "username" : username})
 
-    except Customer.DoesNotExist:
-        return render(request, 'delivery/fail.html')
+        except Customer.DoesNotExist:
+            return render(request, 'delivery/fail.html')
+    
+    return render(request, 'delivery/signin.html')
     
 def open_add_restaurant(request):
     return render(request, 'delivery/add_restaurant.html')

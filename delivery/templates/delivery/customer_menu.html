@@ -1,45 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h3>Welcome {{username}}!</h3>
+{% extends "delivery/base.html" %}
+{% block title %}Menu{% endblock %}
+{% block content %}
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px;">
+  <h2>🍽️ Menu Items</h2>
+  <a href="{% url 'show_cart' username %}" class="button" style="background: linear-gradient(135deg, #ffa502, #ffb84d);">🛒 View Cart</a>
+</div>
 
-    <a href="{% url 'show_cart' username %}" >Go to cart</a>
-
-    <!-- show current menu -->
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Item name</th>
-                <th>Picture</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Is veg?</th>
-                <th>Operation</th>
-            </tr>
-        </thead>
-        <tbody>
-            {%  for item in itemList %}
-                <tr>
-                    <td>{{ item.name }}</td>
-                    <td>
-                        <img src="{{ item.picture }}">
-                    </td>
-                    <td>{{ item.description }}</td>
-                    <td>{{ item.price }}</td>
-                    <td>{{ item.vegeterian }}</td>
-                    <td>
-                        <a href="{% url 'add_to_cart' item.id username %}">
-                            Add to cart
-                        </a>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+<div class="cards-grid">
+  {% for item in itemList %}
+  <div class="card">
+    <img src="{{ item.picture }}" alt="{{ item.name }}" class="card-image">
+    <div class="card-body">
+      <h3 class="card-title">{{ item.name }}</h3>
+      <p style="font-size: 0.9rem; color: #636e72; margin: 0 0 12px;">{{ item.description }}</p>
+      <div class="card-subtitle">
+        <span>💰 ₹{{ item.price }}</span>
+        <span>{% if item.vegeterian %}🌱 Veg{% else %}🍗 Non-Veg{% endif %}</span>
+      </div>
+      <div class="card-actions" style="margin-top: 16px;">
+        <a href="{% url 'add_to_cart' item.id username %}" class="button" style="flex: 1; background: linear-gradient(135deg, #ff6b6b, #ff8787);">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!-- show current menu -->
+{% extends "delivery/base.html" %}
+{% block title %}Document{% endblock %}
+{% block content %}
+<!-- show current menu -->
     <table border="1">
         <thead>
             <tr>
@@ -54,5 +49,4 @@
 
         <button type="submit">Add Item</button>
     </form>
-</body>
-</html>
+{% endblock %}

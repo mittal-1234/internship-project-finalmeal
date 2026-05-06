@@ -1,39 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Hi {{username}} here are you items
-    <!-- show current menu -->
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Item Image</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            {%  for item in itemList %}
-                <tr>
-                    <td>
-                        <img src="{{ item.picture }}">
-                    </td>
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.description }}</td>
-                    <td>{{ item.price }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-        <h2>Total price : {{total_price}}</h2>
-        
-        <form action="{% url 'checkout' username %}">
-            <input type="submit" value="CHECK OUT" />
-        </form>
-    </table>
-</body>
-</html>
+{% extends "delivery/base.html" %}
+{% block title %}Your Cart{% endblock %}
+{% block content %}
+<h2>🛒 Your Cart, {{ username }}</h2>
+
+{% if itemList %}
+<div class="cards-grid">
+  {% for item in itemList %}
+  <div class="card">
+    <img src="{{ item.picture }}" alt="{{ item.name }}" class="card-image">
+    <div class="card-body">
+      <h3 class="card-title">{{ item.name }}</h3>
+      <p style="font-size: 0.9rem; color: #636e72; margin: 0 0 12px;">{{ item.description }}</p>
+      <div class="card-subtitle">
+        <span>💰 ₹{{ item.price }}</span>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div style="background: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 28px; margin-top: 28px; box-shadow: 0 10px 30px rgba(255, 100, 100, 0.1); text-align: center;">
+  <h3 style="color: #d63031; font-size: 1.8rem; margin: 0 0 24px;">Total: ₹{{ total_price }}</h3>
+  <form action="{% url 'checkout' username %}" style="margin: 0;">
+    <input type="submit" value="Proceed to Checkout" class="button" style="background: linear-gradient(135deg, #ff6b6b, #ff8787); padding: 14px 48px; font-size: 1.1rem;"/>
+  </form>
+</div>
+
+{% else %}
+<div style="text-align: center; padding: 48px 24px;">
+  <h3 style="color: #636e72; margin-bottom: 16px;">Your cart is empty 😢</h3>
+  <p style="color: #999; margin-bottom: 24px;">Start adding items from restaurants to see them here</p>
+  <a href="/" class="button" style="background: linear-gradient(135deg, #ff6b6b, #ff8787);">← Back to Restaurants</a>
+</div>
+{% endif %}
+{% endblock %}

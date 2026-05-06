@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    
-    <title>Sign IN</title>
-</head>
-<body>
-    <h3>SIGN IN below:</h3>
+{% extends "delivery/base.html" %}
+{% block title %}Sign IN{% endblock %}
+{% block content %}
+<h3>SIGN IN below:</h3>
 
     <form action="{% url 'signin' %}" method="post">
         {% csrf_token %}
@@ -19,5 +15,4 @@
         <br><br>
         <button type="submit">SIGN IN</button>
     </form>
-</body>
-</html>
+{% endblock %}

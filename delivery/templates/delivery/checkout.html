@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-</head>
-<body>
-    <h1>Checkout</h1>
+{% extends "delivery/base.html" %}
+{% block title %}Checkout{% endblock %}
+{% block content %}
+<h1>Checkout</h1>
     <h2>Welcome, {{ username }}</h2>
 
     {% if error %}
@@ -74,6 +68,4 @@
             e.preventDefault();
         }
     </script>
-    
-</body>
-</html>
+{% endblock %}
