@@ -1,42 +1,46 @@
 {% extends "delivery/base.html" %}
 
-{% block title %}Menu - {{ restaurant.name }} - FinalMeal{% endblock %}
+{% block title %}{{ restaurant.name }} - Meal Buddy{% endblock %}
 
 {% block content %}
-<div style="width: 100%;">
-    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+<div class="menu-container">
+    <!-- Restaurant Header -->
+    <div class="restaurant-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 2px solid var(--border);">
         <div>
-            <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">{{ restaurant.name }}</h2>
-            <p style="font-size: 1.1rem; color: var(--text-muted);">{{ restaurant.cuisine }} • ⭐ {{ restaurant.rating }}</p>
+            <h1 style="margin-bottom: 0.5rem;">🍽️ {{ restaurant.name }}</h1>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); margin: 0;">{{ restaurant.cuisine }} • ⭐ <strong>{{ restaurant.rating }}</strong>/5</p>
         </div>
-        <a href="{% url 'show_cart' username %}" class="btn-cart">
-            <span>🛒</span> View Cart
+        <a href="{% url 'show_cart' username %}" class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i> View Cart
         </a>
     </div>
 
+    <!-- Items Grid -->
     <div class="cards-grid">
         {% for item in itemList %}
         <div class="item-card">
             <div class="item-header">
                 <img src="{{ item.picture }}" alt="{{ item.name }}" class="item-image">
-                <div class="item-details">
-                    <h4>{{ item.name }}</h4>
-                    <p>{{ item.description }}</p>
-                </div>
+            </div>
+            <div class="item-details">
+                <h4 style="margin: 0 0 0.5rem; color: var(--text-primary);">{{ item.name }}</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0 0 1rem;">{{ item.description }}</p>
             </div>
             <div class="item-footer">
                 <span class="item-price">₹{{ item.price }}</span>
                 <span class="item-type {% if item.vegeterian %}type-veg{% else %}type-nonveg{% endif %}">
-                    {% if item.vegeterian %}🌱 VEG{% else %}🍗 NON-VEG{% endif %}
+                    {% if item.vegeterian %}<i class="fas fa-leaf"></i> VEG{% else %}<i class="fas fa-drumstick-bite"></i> NON-VEG{% endif %}
                 </span>
             </div>
-            <a href="{% url 'add_to_cart' item.id username %}" style="text-decoration: none;">
-                <button style="width: 100%;">Add to Cart</button>
+            <a href="{% url 'add_to_cart' item.id username %}" style="text-decoration: none; padding: 0 var(--spacing-lg) var(--spacing-lg);">
+                <button style="width: 100%; padding: 12px; font-weight: 600;">
+                    <i class="fas fa-plus"></i> Add to Cart
+                </button>
             </a>
         </div>
         {% empty %}
-        <div class="card" style="grid-column: 1 / -1; text-align: center;">
-            <p>No items found in this menu.</p>
+        <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 0;">
+            <p style="font-size: 1.1rem; color: var(--text-secondary);">No items found in this menu.</p>
         </div>
         {% endfor %}
     </div>
