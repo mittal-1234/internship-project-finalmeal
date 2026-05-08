@@ -55,6 +55,12 @@ restaurants_data = [
         'cuisine': 'Chinese',
         'rating': 4.1,
         'picture': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu-lhvqHnEgVp2WEjEHMrY-lHFgk67TqcoWg&s'
+    },
+    {
+        'name': 'veggies',
+        'cuisine': 'Multicultural Cuisine',
+        'rating': 4.9,
+        'picture': 'https://img.restaurantguru.com/ree9-Ashokas-Veggies-logo.jpg'
     }
 ]
 
@@ -152,7 +158,15 @@ items_data = [
         'vegeterian': False,
         'picture': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuNpzLejJ8aQrhiv1xJo5ytBFZwHY3wfeKKw&s'
     },
-    
+    # veggies (1 items)
+    {
+        'restaurant': restaurants['veggies'],
+        'name': 'Paneer Fried Rice',
+        'description': 'Fragrant fried rice with paneer',
+        'price': 189,
+        'vegeterian': True,
+        'picture': 'https://nishkitchen.com/wp-content/uploads/2024/05/Chilli-Paneer-fried-rice-1.jpg'
+    },
 ]
 for item_data in items_data:
     item = Item.objects.create(**item_data)

@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from.import views
 urlpatterns = [
     path('', views.index),
     path('open_signin', views.open_signin, name='open_signin'),

@@ -1,24 +1,22 @@
 {% extends "delivery/base.html" %}
 
-{% block title %}Your Cart - FinalMeal{% endblock %}
+{% block title %}Shopping Cart - Meal Buddy{% endblock %}
 
 {% block content %}
 <div style="width: 100%;">
-    <div style="margin-bottom: 3rem;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Your Cart 🛒</h2>
-        <p style="font-size: 1.2rem; color: var(--text-muted);">Review your items before checkout, {{ username }}</p>
+    <div style="margin-bottom: 2rem;">
+        <h1><i class="fas fa-shopping-cart"></i> Your Cart</h1>
+        <p style="color: var(--text-secondary);">Review your items before checkout, {{ username }}</p>
     </div>
 
     {% if itemList %}
     <div class="cards-grid">
         {% for item in itemList %}
         <div class="item-card">
-            <div class="item-header">
-                <img src="{{ item.picture }}" alt="{{ item.name }}" class="item-image">
-                <div class="item-details">
-                    <h4>{{ item.name }}</h4>
-                    <p>{{ item.description }}</p>
-                </div>
+            <img src="{{ item.picture }}" alt="{{ item.name }}" class="item-image">
+            <div class="item-details">
+                <h4 style="margin: 0 0 0.5rem;">{{ item.name }}</h4>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0 0 1rem;">{{ item.description }}</p>
             </div>
             <div class="item-footer">
                 <span class="item-price">₹{{ item.price }}</span>
@@ -27,22 +25,41 @@
         {% endfor %}
     </div>
 
-    <div class="card" style="margin-top: 3rem; max-width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
-        <div style="text-align: center;">
-            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 0.5rem;">Order Total</p>
-            <h3 style="font-size: 2.5rem; color: var(--primary);">₹{{ total_price }}</h3>
+    <!-- Checkout Summary -->
+    <div style="margin-top: 3rem;">
+        <div class="card" style="max-width: 600px; margin: 0 auto;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 2px solid var(--border);">
+                <i class="fas fa-receipt" style="font-size: 1.5rem; color: var(--primary);"></i>
+                <div>
+                    <p style="font-size: var(--font-size-sm); color: var(--text-secondary); margin: 0;">Total Amount</p>
+                    <h2 style="margin: 0; color: var(--primary);">₹{{ total_price }}</h2>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 1rem;">
+                <a href="{% url 'view_menu' 14 username %}" style="text-decoration: none; flex: 1;">
+                    <button class="btn btn-secondary btn-block">
+                        <i class="fas fa-arrow-left"></i> Continue Shopping
+                    </button>
+                </a>
+                <form action="{% url 'checkout' username %}" style="flex: 1;">
+                    <button type="submit" class="btn btn-primary btn-block" style="width: 100%;">
+                        <i class="fas fa-check"></i> Proceed to Checkout
+                    </button>
+                </form>
+            </div>
         </div>
-        <form action="{% url 'checkout' username %}" style="width: 100%; max-width: 400px;">
-            <button type="submit" style="width: 100%; padding: 1.2rem;">Proceed to Checkout</button>
-        </form>
     </div>
 
     {% else %}
-    <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
-        <h3 style="margin-bottom: 1rem;">Your cart is empty 😢</h3>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">Start adding items from restaurants to see them here.</p>
-        <a href="/" style="text-decoration: none;">
-            <button class="btn-secondary">← Back to Restaurants</button>
+    <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center; padding: 3rem;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🛒</div>
+        <h2>Your cart is empty</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">Looks like you haven't added any items yet. Start exploring restaurants!</p>
+        <a href="{% url 'customer_home' username %}" style="text-decoration: none;">
+            <button class="btn btn-primary">
+                <i class="fas fa-arrow-left"></i> Back to Restaurants
+            </button>
         </a>
     </div>
     {% endif %}

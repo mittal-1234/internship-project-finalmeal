@@ -4,19 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}FinalMeal{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'delivery/style.css' %}">
+    <title>{% block title %}Meal Buddy - Food Delivery{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'delivery/styles.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="page-shell">
-        <header class="page-header">
-            <a href="/" class="brand">FinalMeal</a>
+        <header class="navbar">
+            <div class="navbar-container">
+                <a href="/" class="navbar-brand">
+                    <i class="fas fa-utensils"></i> Meal Buddy
+                </a>
+                <nav class="navbar-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    {% if username %}<a href="/show_cart/{{ username }}" class="nav-link"><i class="fas fa-shopping-cart"></i> Cart</a>{% endif %}
+                </nav>
+                {% if username %}
+                <div class="navbar-user">
+                    <span class="user-name">{{ username }}</span>
+                </div>
+                {% endif %}
+            </div>
         </header>
+        
         <main class="page-content">
             {% block content %}{% endblock %}
         </main>
+        
         <footer class="page-footer">
-            <p>Powered by FinalMeal</p>
+            <div class="footer-container">
+                <p>&copy; 2024 Meal Buddy. All rights reserved.</p>
+            </div>
         </footer>
     </div>
 </body>

@@ -1,44 +1,52 @@
 {% extends "delivery/base.html" %}
 
-{% block title %}Sign Up - FinalMeal{% endblock %}
+{% block title %}Sign Up - Meal Buddy{% endblock %}
 
 {% block content %}
-<div class="card" style="max-width: 600px;">
-    <h2>SIGN UP below:</h2>
-
-    <form action="{% url 'signup' %}" method="post">
-        {% csrf_token %}
-        
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Choose a username" required>
+<div style="max-width: 480px; margin: 0 auto;">
+    <div class="card" style="padding: 2.5rem;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <i class="fas fa-user-plus" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h1 style="margin: 0 0 0.5rem;">Join Meal Buddy</h1>
+            <p style="color: var(--text-secondary);">Create an account to get started</p>
         </div>
 
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Create a password" required>
+        <form action="{% url 'signup' %}" method="post">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="username"><i class="fas fa-user"></i> Username</label>
+                <input type="text" id="username" name="username" placeholder="Choose a username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password"><i class="fas fa-lock"></i> Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile"><i class="fas fa-phone"></i> Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="+91 XXXXXXXXXX" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address"><i class="fas fa-map-marker-alt"></i> Delivery Address</label>
+                <textarea id="address" name="address" placeholder="Enter your full delivery address" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-block" style="padding: 14px; font-size: 1rem; margin-top: 0.5rem;">
+                <i class="fas fa-check"></i> Create Account
+            </button>
+        </form>
+
+        <div style="margin-top: 2rem; text-align: center; padding-top: 2rem; border-top: 1px solid var(--border);">
+            <p style="color: var(--text-secondary); margin: 0;">Already have an account? <a href="{% url 'open_signin' %}" style="color: var(--primary); font-weight: 600; text-decoration: none;">Sign in</a></p>
         </div>
-
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" required>
-        </div>
-
-        <div class="form-group">
-            <label for="mobile">Mobile</label>
-            <input type="text" id="mobile" name="mobile" placeholder="Your mobile number" required>
-        </div>
-
-        <div class="form-group">
-            <label for="address">Address</label>
-            <textarea id="address" name="address" style="padding: 1rem; border-radius: 12px; border: 1px solid #E0E0E0; font-family: inherit; min-height: 100px;" placeholder="Your delivery address" required></textarea>
-        </div>
-
-        <button type="submit">SIGN UP</button>
-    </form>
-
-    <div style="margin-top: 1.5rem; text-align: center; font-size: 0.9rem;">
-        <p>Already have an account? <a href="{% url 'open_signin' %}" style="color: var(--primary); font-weight: 600; text-decoration: none;">Sign In</a></p>
     </div>
 </div>
 {% endblock %}

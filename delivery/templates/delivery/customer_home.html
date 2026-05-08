@@ -1,32 +1,35 @@
 {% extends "delivery/base.html" %}
 
-{% block title %}Explore Restaurants - FinalMeal{% endblock %}
+{% block title %}Restaurants - Meal Buddy{% endblock %}
 
 {% block content %}
 <div style="width: 100%;">
     <div style="margin-bottom: 3rem;">
-        <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Welcome, {{ username }}! 👋</h2>
-        <p style="font-size: 1.2rem; color: var(--text-muted);">What would you like to eat today?</p>
+        <h1 style="margin-bottom: 0.5rem;"><i class="fas fa-home"></i> Welcome, {{ username }}! 👋</h1>
+        <p style="font-size: 1.1rem; color: var(--text-secondary);">Discover delicious food from amazing restaurants</p>
     </div>
 
     <div class="cards-grid">
         {% for r in restaurantList %}
-        <a href="{% url 'view_menu' r.id username %}" class="restaurant-card">
-            <div class="restaurant-image-container">
-                <img src="{{ r.picture }}" alt="{{ r.name }}" class="restaurant-image">
-            </div>
-            <div class="restaurant-info">
-                <h3>{{ r.name }}</h3>
-                <div class="restaurant-meta">
-                    <span class="cuisine-tag">{{ r.cuisine }}</span>
-                    <span class="rating-badge">⭐ {{ r.rating }}</span>
+        <a href="{% url 'view_menu' r.id username %}" class="card" style="text-decoration: none; color: inherit;">
+            <img src="{{ r.picture }}" alt="{{ r.name }}" class="card-image">
+            <div class="card-body">
+                <h3 class="card-title">{{ r.name }}</h3>
+                <p class="card-text">{{ r.cuisine }}</p>
+                <div class="card-footer">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-star" style="color: var(--warning);"></i>
+                        <span style="font-weight: 600; color: var(--text-primary);">{{ r.rating }}</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm">
+                        <i class="fas fa-arrow-right"></i> View Menu
+                    </button>
                 </div>
-                <button class="btn-view">View Menu</button>
             </div>
         </a>
         {% empty %}
-        <div class="card" style="grid-column: 1 / -1; text-align: center;">
-            <p>No restaurants available yet. Check back soon!</p>
+        <div style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+            <p style="font-size: 1.1rem; color: var(--text-secondary);">No restaurants available yet. Check back soon!</p>
         </div>
         {% endfor %}
     </div>
