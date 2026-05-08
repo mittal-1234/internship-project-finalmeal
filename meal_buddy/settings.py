@@ -26,9 +26,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'your-secure-secret-key-here-change-th
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,mittaljangada.pythonanywhere.com').split(',')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'internship-project-finalmeal.onrender.com,localhost,127.0.0.1,mittaljangada.pythonanywhere.com').split(',')
 
-CSRF_TRUSTED_ORIGINS = ['https://mittaljangada.pythonanywhere.com']
+CSRF_TRUSTED_ORIGINS = ['https://internship-project-finalmeal.onrender.com']
 
 
 # Application definition
