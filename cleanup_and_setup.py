@@ -97,7 +97,7 @@ items_data = [
         'description': 'Crispy waffle with chocolate sauce',
         'price': 199,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80'
+        'picture': 'https://www.lakehousedenmark.com.au/wp-content/uploads/2021/10/Chocolate-Waffles-3.jpg'
     },
     {
         'restaurant': restaurants['Belgium Waffle House'],
@@ -105,7 +105,7 @@ items_data = [
         'description': 'Fresh waffle with strawberry toppings',
         'price': 189,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&q=80'
+        'picture': 'https://theunlikelybaker.com/wp-content/uploads/2020/01/Strawberry-Waffles-Chocolate-Chips-Feature-IG.jpg'
     },
     # Burger King (2 items)
     {
