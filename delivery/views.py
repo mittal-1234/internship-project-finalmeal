@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+import random
+import json
 
 from .models import Customer, Restaurant, Item, Cart
 
@@ -224,3 +226,36 @@ def orders(request, username):
         'cart_items': cart_items,
         'total_price': total_price,
     })
+
+def chatbot_api(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        message = data.get('message', '').lower()
+        
+        # Simple AI-like logic for recommendations
+        restaurants = list(Restaurant.objects.all())
+        items = list(Item.objects.all())
+        
+        if 'recommend' in message or 'suggest' in message or 'hungry' in message:
+            if 'pizza' in message:
+                relevant_items = [i for i in items if 'pizza' in i.name.lower()]
+            elif 'burger' in message:
+                relevant_items = [i for i in items if 'burger' in i.name.lower()]
+            elif 'sweet' in message or 'dessert' in message or 'cake' in message:
+                relevant_items = [i for i in items if any(x in i.name.lower() for x in ['cake', 'waffle', 'shake', 'pastry'])]
+            else:
+                relevant_items = random.sample(items, min(3, len(items)))
+            
+            if not relevant_items:
+                relevant_items = random.sample(items, min(3, len(items)))
+                
+            response = "I recommend trying: " + ", ".join([f"{i.name} from {i.restaurant.name}" for i in relevant_items[:3]])
+            return JsonResponse({'reply': response})
+            
+        elif 'hi' in message or 'hello' in message:
+            return JsonResponse({'reply': "Hello! I'm your AI Food Buddy. I can recommend delicious meals for you. Just ask 'What should I eat?' or 'Recommend some pizza'!"})
+            
+        else:
+            return JsonResponse({'reply': "That sounds interesting! I'm best at recommending food. Try asking for a recommendation!"})
+            
+    return JsonResponse({'error': 'Invalid request'}, status=400)

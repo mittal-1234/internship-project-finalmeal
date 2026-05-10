@@ -4,54 +4,112 @@
 {% block title %}Meal Buddy - Premium Food Delivery{% endblock %}
 
 {% block content %}
-<section style="text-align: center; padding: 3rem 0;">
-    <div style="margin-bottom: 2rem;">
-        <i class="fas fa-utensils" style="font-size: 4rem; color: var(--primary); margin-bottom: 1rem;"></i>
-    </div>
+<section class="hero-section">
+    <h1>Delicious Food, Fast Delivery</h1>
+    <p>Experience the finest cuisines from your favorite local restaurants, delivered fresh and fast. Your ultimate choice for every meal.</p>
     
-    <h1 style="font-size: 3rem; margin-bottom: 1rem;">
-        Delicious Food,
-        <span style="background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-            Fast Delivery
-        </span>
-    </h1>
-    
-    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-        Experience the finest cuisines from your favorite local restaurants, delivered fresh and fast. Your ultimate choice for every meal.
-    </p>
-    
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem;">
-        <a href="{% url 'open_signup' %}" style="text-decoration: none;">
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="{% url 'open_signup' %}">
             <button class="btn btn-primary btn-lg">
                 <i class="fas fa-arrow-right"></i> Get Started Now
             </button>
         </a>
-        <a href="{% url 'open_signin' %}" style="text-decoration: none;">
+        <a href="{% url 'open_signin' %}">
             <button class="btn btn-secondary btn-lg">
                 <i class="fas fa-sign-in-alt"></i> Already Have Account?
             </button>
         </a>
     </div>
+</section>
 
-    <!-- Features -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
-        <div style="padding: 2rem; background: var(--bg-light); border-radius: var(--radius-lg);">
-            <i class="fas fa-clock" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
-            <h3 style="margin-bottom: 0.5rem;">Fast Delivery</h3>
-            <p style="color: var(--text-secondary); margin: 0;">Get your food delivered within 30-45 minutes</p>
+<!-- Features -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+    <div style="padding: 2rem; background: var(--bg-light); border-radius: var(--radius-lg); text-align: center;">
+        <i class="fas fa-clock" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+        <h3 style="margin-bottom: 0.5rem;">Fast Delivery</h3>
+        <p style="color: var(--text-secondary); margin: 0;">Get your food delivered within 30-45 minutes</p>
+    </div>
+    
+    <div style="padding: 2rem; background: var(--bg-light); border-radius: var(--radius-lg); text-align: center;">
+        <i class="fas fa-leaf" style="font-size: 2.5rem; color: var(--success); margin-bottom: 1rem;"></i>
+        <h3 style="margin-bottom: 0.5rem;">Fresh Quality</h3>
+        <p style="color: var(--text-secondary); margin: 0;">Only freshly prepared dishes from verified restaurants</p>
+    </div>
+    
+    <div style="padding: 2rem; background: var(--bg-light); border-radius: var(--radius-lg); text-align: center;">
+        <i class="fas fa-robot" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+        <h3 style="margin-bottom: 0.5rem;">AI Food Buddy</h3>
+        <p style="color: var(--text-secondary); margin: 0;">Get smart AI-based meal recommendations instantly</p>
+    </div>
+</div>
+
+<!-- Chatbot Widget -->
+<div class="chatbot-widget">
+    <div class="chatbot-button" id="chat-toggle">
+        <i class="fas fa-robot"></i>
+    </div>
+    <div class="chatbot-container" id="chat-container">
+        <div class="chatbot-header">
+            <span>AI Food Buddy</span>
+            <i class="fas fa-times" id="chat-close" style="cursor: pointer;"></i>
         </div>
-        
-        <div style="padding: 2rem; background: var(--bg-light); border-radius: var(--radius-lg);">
-            <i class="fas fa-leaf" style="font-size: 2.5rem; color: var(--success); margin-bottom: 1rem;"></i>
-            <h3 style="margin-bottom: 0.5rem;">Fresh Quality</h3>
-            <p style="color: var(--text-secondary); margin: 0;">Only freshly prepared dishes from verified restaurants</p>
+        <div class="chatbot-messages" id="chat-messages">
+            <div class="message message-bot">
+                Hello! I'm your AI Food Buddy. I can recommend delicious meals for you. Just ask "What should I eat?" or "Suggest some pizza"!
+            </div>
         </div>
-        
-        <div style="padding: 2rem; background: var(--bg-light); border-radius: var(--radius-lg);">
-            <i class="fas fa-lock" style="font-size: 2.5rem; color: var(--warning); margin-bottom: 1rem;"></i>
-            <h3 style="margin-bottom: 0.5rem;">Secure Payments</h3>
-            <p style="color: var(--text-secondary); margin: 0;">Safe and secure payment options with multiple methods</p>
+        <div class="chatbot-input">
+            <input type="text" id="chat-input" placeholder="Ask for recommendations...">
+            <button id="chat-send" style="padding: 8px 15px; width: auto; margin: 0;">
+                <i class="fas fa-paper-plane"></i>
+            </button>
         </div>
     </div>
-</section>
+</div>
+
+<script>
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatClose = document.getElementById('chat-close');
+    const chatContainer = document.getElementById('chat-container');
+    const chatInput = document.getElementById('chat-input');
+    const chatSend = document.getElementById('chat-send');
+    const chatMessages = document.getElementById('chat-messages');
+
+    chatToggle.onclick = () => chatContainer.classList.add('active');
+    chatClose.onclick = () => chatContainer.classList.remove('active');
+
+    function addMessage(text, isUser = false) {
+        const msg = document.createElement('div');
+        msg.className = `message ${isUser ? 'message-user' : 'message-bot'}`;
+        msg.textContent = text;
+        chatMessages.appendChild(msg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    async function sendMessage() {
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        addMessage(text, true);
+        chatInput.value = '';
+
+        try {
+            const response = await fetch('/chatbot/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify({ message: text })
+            });
+            const data = await response.json();
+            addMessage(data.reply);
+        } catch (error) {
+            addMessage("Sorry, I'm having trouble connecting right now.");
+        }
+    }
+
+    chatSend.onclick = sendMessage;
+    chatInput.onkeypress = (e) => { if (e.key === 'Enter') sendMessage(); };
+</script>
 {% endblock %}

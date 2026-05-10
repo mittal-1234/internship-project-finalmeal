@@ -23,6 +23,7 @@ urlpatterns = [
     path('checkout/<str:username>/', views.checkout, name='checkout'),
 
     path('orders/<str:username>/', views.orders, name='orders'),
+    path('chatbot/', views.chatbot_api, name='chatbot_api'),
 ]
 
 
