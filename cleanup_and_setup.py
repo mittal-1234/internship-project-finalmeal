@@ -89,160 +89,160 @@ items_data = [
     {
         'restaurant': restaurants['Dominos Pizza'],
         'name': 'Margherita Pizza',
-        'description': 'Classic pizza with cheese and tomato',
+        'description': 'A timeless classic featuring a thin, crispy crust topped with rich San Marzano tomato sauce, fresh mozzarella pearls, and fragrant basil leaves.',
         'price': 299,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=800&q=80'
+        'picture': 'https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Dominos Pizza'],
         'name': 'Pepperoni Pizza',
-        'description': 'Spicy pepperoni with mozzarella',
+        'description': 'The ultimate crowd-pleaser! Loaded with spicy, zesty pepperoni slices and a mountain of melted mozzarella cheese on our signature hand-tossed dough.',
         'price': 349,
         'vegeterian': False,
-        'picture': 'https://i0.wp.com/www.spicesinmydna.com/wp-content/uploads/2024/02/Pepperoni-Pizza-with-Hot-Honey-Ricotta-Olives-and-Basil-9.jpg?fit=907%2C1360&ssl=1'
+        'picture': 'https://images.unsplash.com/photo-1628840042765-356cda07f4ee?q=80&w=1000&auto=format&fit=crop'
     },
     # Belgium Waffle House (2 items)
     {
         'restaurant': restaurants['Belgium Waffle House'],
         'name': 'Chocolate Waffle',
-        'description': 'Crispy waffle with chocolate sauce',
+        'description': 'Indulge in a warm, crispy Belgian waffle drenched in premium dark chocolate ganache, topped with chocolate shavings.',
         'price': 199,
         'vegeterian': True,
-        'picture': 'https://www.lakehousedenmark.com.au/wp-content/uploads/2021/10/Chocolate-Waffles-3.jpg'
+        'picture': 'https://images.unsplash.com/photo-1594027123664-96617631762d?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Belgium Waffle House'],
         'name': 'Strawberry Waffle',
-        'description': 'Fresh waffle with strawberry toppings',
+        'description': 'A delightful treat of golden waffles topped with fresh, juicy strawberries, a drizzle of sweet strawberry coulis, and a dusting of powdered sugar.',
         'price': 189,
         'vegeterian': True,
-        'picture': 'https://theunlikelybaker.com/wp-content/uploads/2020/01/Strawberry-Waffles-Chocolate-Chips-Feature-IG.jpg'
+        'picture': 'https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1000&auto=format&fit=crop'
     },
     # Burger King (2 items)
     {
         'restaurant': restaurants['Burger King'],
         'name': 'Classic Cheeseburger',
-        'description': 'Juicy beef patty with melted cheese',
+        'description': 'A juicy, flame-grilled beef patty topped with melted cheddar, crisp lettuce, vine-ripened tomatoes, and our secret house sauce on a toasted brioche bun.',
         'price': 279,
         'vegeterian': False,
-        'picture': 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80'
+        'picture': 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Burger King'],
         'name': 'Veggie Burger',
-        'description': 'Delicious vegetable patty burger',
+        'description': 'A protein-packed garden patty made with fresh vegetables and grains, topped with avocado, sprouts, and vegan aioli on a whole-grain bun.',
         'price': 229,
         'vegeterian': True,
-        'picture': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuf0USTKRQ5eRKoNDaTlq-bsxdYm89Pf-m7A&s'
+        'picture': 'https://images.unsplash.com/photo-1585238341710-4913de44e5a8?q=80&w=1000&auto=format&fit=crop'
     },
     # Paneer House (2 items)
     {
         'restaurant': restaurants['Paneer House'],
         'name': 'Paneer Tikka',
-        'description': 'Grilled paneer cubes with spices',
+        'description': 'Succulent cubes of cottage cheese marinated in a spicy yogurt blend, char-grilled to perfection in a traditional tandoor for a smoky flavor.',
         'price': 299,
         'vegeterian': True,
-        'picture': 'https://c.ndtvimg.com/2024-07/9fe2b05g_paneer-tikka_625x300_01_July_24.jpg'
+        'picture': 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Paneer House'],
         'name': 'Butter Chicken',
-        'description': 'Tender chicken in creamy tomato sauce',
+        'description': 'A world-famous North Indian delicacy! Tender chicken pieces simmered in a rich, velvety tomato and butter gravy.',
         'price': 349,
         'vegeterian': False,
-        'picture': 'https://www.licious.in/blog/wp-content/uploads/2020/10/butter-chicken--600x600.jpg'
+        'picture': 'https://images.unsplash.com/photo-1603894527134-99e44e39196e?q=80&w=1000&auto=format&fit=crop'
     },
     # Chinese Express (2 items)
     {
         'restaurant': restaurants['Chinese Express'],
         'name': 'Hakka Noodles',
-        'description': 'Stir-fried noodles with vegetables',
+        'description': 'Wok-tossed thin noodles with a colorful array of crisp vegetables, seasoned with aromatic Indo-Chinese spices and soy sauce.',
         'price': 189,
         'vegeterian': True,
-        'picture': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6byAqaBbNC3Wry-VBaTSbPUz9GccdcPJwdw&s'
+        'picture': 'https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Chinese Express'],
         'name': 'Chicken Fried Rice',
-        'description': 'Fragrant fried rice with chicken',
+        'description': 'Fragrant stir-fried rice with tender chicken bits, scrambled eggs, and fresh spring onions for a perfect savory meal.',
         'price': 229,
         'vegeterian': False,
-        'picture': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuNpzLejJ8aQrhiv1xJo5ytBFZwHY3wfeKKw&s'
+        'picture': 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['veggies'],
         'name': 'Paneer Fried Rice',
-        'description': 'Fragrant fried rice with paneer',
+        'description': 'A vegetarian favorite! Aromatic rice tossed with cubes of golden-fried paneer and fresh garden vegetables in a savory sauce.',
         'price': 189,
         'vegeterian': True,
-        'picture': 'https://nishkitchen.com/wp-content/uploads/2024/05/Chilli-Paneer-fried-rice-1.jpg'
+        'picture': 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=1000&auto=format&fit=crop'
     },
     # Cake De Lite (4 items)
     {
         'restaurant': restaurants['Cake De Lite'],
         'name': 'Chocolate Truffle',
-        'description': 'Rich and creamy chocolate truffle cake.',
+        'description': 'A decadent masterpiece for chocolate lovers. Layers of moist cocoa sponge filled and frosted with silky dark chocolate truffle cream.',
         'price': 350,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80'
+        'picture': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Cake De Lite'],
         'name': 'Pineapple Cake',
-        'description': 'Fresh pineapple chunks with whipped cream.',
+        'description': 'A tropical delight featuring light vanilla sponge soaked in pineapple juice, layered with fresh pineapple chunks and whipped cream.',
         'price': 300,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80'
+        'picture': 'https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Cake De Lite'],
         'name': 'Red Velvet Pastry',
-        'description': 'Soft red velvet sponge with cream cheese.',
+        'description': 'Vibrant and velvety red cocoa sponge layered with tangy cream cheese frosting. A perfect balance of sweetness and elegance.',
         'price': 120,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=800&q=80'
+        'picture': 'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Cake De Lite'],
         'name': 'Blueberry Muffin',
-        'description': 'Oven fresh muffins with real blueberries.',
+        'description': 'Bursting with fresh blueberries, these buttery muffins feature a hint of lemon zest and a crunchy streusel topping.',
         'price': 80,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=800&q=80'
+        'picture': 'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80&w=1000&auto=format&fit=crop'
     },
     # Frozen Bottle (4 items)
     {
         'restaurant': restaurants['Frozen Bottle'],
         'name': 'Belgian Chocolate',
-        'description': 'Classic thick Belgian chocolate shake.',
+        'description': 'Our signature thick shake made with authentic Belgian dark chocolate, blended to perfection for an intense experience.',
         'price': 180,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&q=80'
+        'picture': 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Frozen Bottle'],
         'name': 'Strawberry Shake',
-        'description': 'Creamy strawberry goodness.',
+        'description': 'A refreshing blend of sun-ripened strawberries and creamy vanilla ice cream, topped with a fresh strawberry.',
         'price': 150,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1543648973-1eb94fa09f48?w=800&q=80'
+        'picture': 'https://images.unsplash.com/photo-1543648973-1eb94fa09f48?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Frozen Bottle'],
         'name': 'Cold Coffee',
-        'description': 'Refreshing cold coffee with ice cream.',
+        'description': 'The perfect pick-me-up! Rich espresso blended with chilled milk and a scoop of vanilla ice cream, served over ice.',
         'price': 120,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80'
+        'picture': 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Frozen Bottle'],
         'name': 'Oreo Overload',
-        'description': 'Thick shake loaded with Oreo crumbles.',
+        'description': 'A cookies-and-cream dream. A thick vanilla shake loaded with crushed Oreo cookies and chocolate sauce.',
         'price': 210,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&q=80'
+        'picture': 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=1000&auto=format&fit=crop'
     },
 ]
 for item_data in items_data:
