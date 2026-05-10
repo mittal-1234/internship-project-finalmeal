@@ -99,7 +99,7 @@ items_data = [
         'description': 'A timeless classic featuring a thin, crispy crust topped with rich San Marzano tomato sauce, fresh mozzarella pearls, and fragrant basil leaves.',
         'price': 299,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1574129623612-9865b206677a?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Pizza_Margherita_stu_spivack.jpg'
     },
     {
         'restaurant': restaurants['Dominos Pizza'],
@@ -116,7 +116,7 @@ items_data = [
         'description': 'Indulge in a warm, crispy Belgian waffle drenched in premium dark chocolate ganache, topped with chocolate shavings.',
         'price': 199,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1593531182844-d2ad0d03b0c5?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1562376552-0d160a2f238d?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Belgium Waffle House'],
@@ -192,7 +192,7 @@ items_data = [
         'description': 'A decadent masterpiece for chocolate lovers. Layers of moist cocoa sponge filled and frosted with silky dark chocolate truffle cream.',
         'price': 350,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1578985543062-d413826bb0a8?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.pexels.com/photos/34802628/pexels-photo-34802628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     {
         'restaurant': restaurants['Cake De Lite'],
@@ -200,7 +200,7 @@ items_data = [
         'description': 'A tropical delight featuring light vanilla sponge soaked in pineapple juice, layered with fresh pineapple chunks and whipped cream.',
         'price': 300,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.pexels.com/photos/8820012/pexels-photo-8820012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     {
         'restaurant': restaurants['Cake De Lite'],
