@@ -8,12 +8,14 @@ from delivery.models import Item
 
 # Clear all corrupted picture data
 Item.objects.all().update(picture='')
-print("✓ Cleared all corrupted picture data")
+print("[OK] Cleared all corrupted picture data")
 
 # Restore correct Unsplash URLs
 mapping = {
     'farmhouse pizza': 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80',
     'cheese burst pizza': 'https://images.unsplash.com/photo-1601924534193-9d79f1f09b71?w=800&q=80',
+    'Chocolate Waffle': 'https://images.unsplash.com/photo-1594027123664-96617631762d?w=800&q=80',
+    'Strawberry Waffle': 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800&q=80',
     'garlic bread': 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&q=80',
     'alfredo pasta': 'https://images.unsplash.com/photo-1512058564366-c9d84e6d0f0c?w=800&q=80',
     'chocolate shake': 'https://images.unsplash.com/photo-1601924638867-3ec8d5a911f9?w=800&q=80',
@@ -28,10 +30,12 @@ mapping = {
     'Pepperoni Pizza': 'https://images.unsplash.com/photo-1628840042765-356cda07f4ee?w=800&q=80',
     'Veggie Supreme Pizza': 'https://images.unsplash.com/photo-1511689915289-025f5b846b35?w=800&q=80',
     'Butter Chicken': 'https://images.unsplash.com/photo-1608239366580-361798d2d6a3?w=800&q=80',
+    'Paneer Tikka': 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=800&q=80',
     'Paneer Makhani': 'https://images.unsplash.com/photo-1604908176627-93b6b1b3fa3f?w=800&q=80',
     'Chole Bhature': 'https://images.unsplash.com/photo-1589923188900-2e3da6214f1a?w=800&q=80',
     'Hakka Noodles': 'https://images.unsplash.com/photo-1608837035181-8d0d2e98ca84?w=800&q=80',
     'Chicken Fried Rice': 'https://images.unsplash.com/photo-1596103442097-8ad28f25ff91?w=800&q=80',
+    'Paneer Fried Rice': 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&q=80',
     'Shrimp Pad Thai': 'https://images.unsplash.com/photo-1626082927389-6cd097cdc46e?w=800&q=80',
     'Chicken Shawarma': 'https://images.unsplash.com/photo-1599599810694-b5ac4dd33e2b?w=800&q=80',
     'Falafel Wrap': 'https://images.unsplash.com/photo-1585238341710-4913de44e5a8?w=800&q=80',
@@ -39,21 +43,29 @@ mapping = {
     'Gulab Jamun': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80',
     'Chocolate Cake': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80',
     'Ice Cream Sundae': 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800&q=80',
+    'Chocolate Truffle': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80',
+    'Pineapple Cake': 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80',
+    'Red Velvet Pastry': 'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=800&q=80',
+    'Blueberry Muffin': 'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=800&q=80',
+    'Belgian Chocolate': 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&q=80',
+    'Strawberry Shake': 'https://images.unsplash.com/photo-1543648973-1eb94fa09f48?w=800&q=80',
+    'Cold Coffee': 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80',
+    'Oreo Overload': 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&q=80',
 }
 
 for name, url in mapping.items():
     Item.objects.filter(name=name).update(picture=url)
     
-print(f"✓ Updated {len(mapping)} items with correct image URLs")
+print(f"[OK] Updated {len(mapping)} items with correct image URLs")
 
 # Verify fixes
 items = Item.objects.all()
-print(f"\n✓ Verification - Total items: {items.count()}")
+print(f"\n[OK] Verification - Total items: {items.count()}")
 bad_items = items.filter(picture='')
 if bad_items.exists():
-    print(f"⚠ {bad_items.count()} items still missing images: {', '.join([i.name for i in bad_items[:5]])}")
+    print(f"[WARN] {bad_items.count()} items still missing images: {', '.join([i.name for i in bad_items[:5]])}")
 else:
-    print(f"✓ All items have images assigned")
+    print(f"[OK] All items have images assigned")
 
 sample = items[:3]
 for i in sample:
