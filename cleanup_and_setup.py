@@ -84,6 +84,13 @@ for r_data in restaurants_data:
 
 # Step 3: Create 10 menu items distributed across restaurants (2 per restaurant)
 print("\n[3] Creating 10 menu items...")
+
+# Update Frozen Bottle restaurant image
+fb = restaurants.get('Frozen Bottle')
+if fb:
+    fb.picture = 'https://images.unsplash.com/photo-1553177595-4de2bb0842b9?q=80&w=1000&auto=format&fit=crop'
+    fb.save()
+
 items_data = [
     # Dominos Pizza (2 items)
     {
@@ -185,7 +192,7 @@ items_data = [
         'description': 'A decadent masterpiece for chocolate lovers. Layers of moist cocoa sponge filled and frosted with silky dark chocolate truffle cream.',
         'price': 350,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1548943487-a2e4e43b4853?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1578985543062-d413826bb0a8?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Cake De Lite'],
@@ -193,7 +200,7 @@ items_data = [
         'description': 'A tropical delight featuring light vanilla sponge soaked in pineapple juice, layered with fresh pineapple chunks and whipped cream.',
         'price': 300,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1601662528567-526cd06f6582?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Cake De Lite'],
@@ -218,7 +225,7 @@ items_data = [
         'description': 'Our signature thick shake made with authentic Belgian dark chocolate, blended to perfection for an intense experience.',
         'price': 180,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Frozen Bottle'],
@@ -226,7 +233,7 @@ items_data = [
         'description': 'A refreshing blend of sun-ripened strawberries and creamy vanilla ice cream, topped with a fresh strawberry.',
         'price': 150,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1553177595-462f4a3ea578?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1579954115545-a95591f28be0?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Frozen Bottle'],
