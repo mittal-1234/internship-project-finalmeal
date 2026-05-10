@@ -24,6 +24,7 @@ urlpatterns = [
 
     path('orders/<str:username>/', views.orders, name='orders'),
     path('chatbot/', views.chatbot_api, name='chatbot_api'),
+    path('sync_db/', views.sync_database, name='sync_database'),
 ]
 
 

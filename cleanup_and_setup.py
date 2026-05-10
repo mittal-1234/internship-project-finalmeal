@@ -109,7 +109,7 @@ items_data = [
         'description': 'Indulge in a warm, crispy Belgian waffle drenched in premium dark chocolate ganache, topped with chocolate shavings.',
         'price': 199,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1594027123664-96617631762d?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1584947848229-798aa1c2965f?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Belgium Waffle House'],
@@ -117,7 +117,7 @@ items_data = [
         'description': 'A delightful treat of golden waffles topped with fresh, juicy strawberries, a drizzle of sweet strawberry coulis, and a dusting of powdered sugar.',
         'price': 189,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1459789034005-ba29c5783491?q=80&w=1000&auto=format&fit=crop'
     },
     # Burger King (2 items)
     {

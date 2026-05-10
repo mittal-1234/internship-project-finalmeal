@@ -259,3 +259,14 @@ def chatbot_api(request):
             return JsonResponse({'reply': "That sounds interesting! I'm best at recommending food. Try asking for a recommendation!"})
             
     return JsonResponse({'error': 'Invalid request'}, status=400)
+
+def sync_database(request):
+    """Hidden view to trigger database cleanup and setup on Render"""
+    import subprocess
+    import sys
+    try:
+        # Run the cleanup_and_setup.py script
+        result = subprocess.run([sys.executable, 'cleanup_and_setup.py'], capture_output=True, text=True)
+        return HttpResponse(f"Database sync successful!<br><pre>{result.stdout}</pre>")
+    except Exception as e:
+        return HttpResponse(f"Database sync failed: {str(e)}", status=500)

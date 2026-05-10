@@ -14,8 +14,8 @@ print("[OK] Cleared all corrupted picture data")
 mapping = {
     'farmhouse pizza': 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1000&auto=format&fit=crop',
     'cheese burst pizza': 'https://images.unsplash.com/photo-1601924534193-9d79f1f09b71?q=80&w=1000&auto=format&fit=crop',
-    'Chocolate Waffle': 'https://images.unsplash.com/photo-1594027123664-96617631762d?q=80&w=1000&auto=format&fit=crop',
-    'Strawberry Waffle': 'https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1000&auto=format&fit=crop',
+    'Chocolate Waffle': 'https://images.unsplash.com/photo-1584947848229-798aa1c2965f?q=80&w=1000&auto=format&fit=crop',
+    'Strawberry Waffle': 'https://images.unsplash.com/photo-1459789034005-ba29c5783491?q=80&w=1000&auto=format&fit=crop',
     'garlic bread': 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1000&auto=format&fit=crop',
     'alfredo pasta': 'https://images.unsplash.com/photo-1512058564366-c9d84e6d0f0c?q=80&w=1000&auto=format&fit=crop',
     'chocolate shake': 'https://images.unsplash.com/photo-1601924638867-3ec8d5a911f9?q=80&w=1000&auto=format&fit=crop',
