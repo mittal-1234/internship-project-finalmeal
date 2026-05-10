@@ -31,7 +31,7 @@ mapping = {
     'Crispy Chicken Wrap': 'https://images.pexels.com/photos/9624298/pexels-photo-9624298.jpeg?auto=compress&cs=tinysrgb&w=800',
     'Onion Rings': 'https://images.pexels.com/photos/9738991/pexels-photo-9738991.jpeg?auto=compress&cs=tinysrgb&w=800',
     # Paneer House (5)
-    'Paneer Tikka': 'https://images.pexels.com/photos/3928854/pexels-photo-3928854.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    'Paneer Tikka': 'https://images.pexels.com/photos/20395267/pexels-photo-20395267.jpeg?auto=compress&cs=tinysrgb&w=800',
     'Butter Chicken': 'https://images.pexels.com/photos/29685054/pexels-photo-29685054.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     'Paneer Tikka Masala': 'https://images.pexels.com/photos/30858402/pexels-photo-30858402.jpeg?auto=compress&cs=tinysrgb&w=800',
     'Dal Makhani': 'https://images.pexels.com/photos/37182514/pexels-photo-37182514.jpeg?auto=compress&cs=tinysrgb&w=800',
@@ -45,7 +45,7 @@ mapping = {
     # veggies (5)
     'Paneer Fried Rice': 'https://images.pexels.com/photos/31783383/pexels-photo-31783383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     'Vegetable Biryani': 'https://images.pexels.com/photos/9609848/pexels-photo-9609848.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'Masala Dosa': 'https://images.pexels.com/photos/32229637/pexels-photo-32229637.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'Masala Dosa': 'https://images.pexels.com/photos/12392915/pexels-photo-12392915.jpeg?auto=compress&cs=tinysrgb&w=800',
     'Chole Bhature': 'https://images.pexels.com/photos/36388454/pexels-photo-36388454.jpeg?auto=compress&cs=tinysrgb&w=800',
     'Veg Pulao': 'https://images.pexels.com/photos/35041645/pexels-photo-35041645.jpeg?auto=compress&cs=tinysrgb&w=800',
     # Cake De Lite (5)

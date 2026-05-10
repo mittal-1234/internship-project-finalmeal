@@ -225,7 +225,7 @@ items_data = [
         'description': 'Succulent cubes of cottage cheese marinated in a spicy yogurt blend, char-grilled to perfection for a smoky flavor.',
         'price': 299,
         'vegeterian': True,
-        'picture': 'https://images.pexels.com/photos/3928854/pexels-photo-3928854.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        'picture': 'https://images.pexels.com/photos/20395267/pexels-photo-20395267.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
         'restaurant': restaurants['Paneer House'],
@@ -325,7 +325,7 @@ items_data = [
         'description': 'A thin, crispy rice crepe filled with a savory spiced potato mash. Served with sambar and coconut chutney.',
         'price': 149,
         'vegeterian': True,
-        'picture': 'https://images.pexels.com/photos/32229637/pexels-photo-32229637.jpeg?auto=compress&cs=tinysrgb&w=800'
+        'picture': 'https://images.pexels.com/photos/12392915/pexels-photo-12392915.jpeg?auto=compress&cs=tinysrgb&w=800'
     },
     {
         'restaurant': restaurants['veggies'],
