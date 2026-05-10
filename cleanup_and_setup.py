@@ -88,7 +88,7 @@ print("\n[3] Creating 10 menu items...")
 # Update Frozen Bottle restaurant image
 fb = restaurants.get('Frozen Bottle')
 if fb:
-    fb.picture = 'https://images.unsplash.com/photo-1553177595-4de2bb0842b9?q=80&w=1000&auto=format&fit=crop'
+    fb.picture = 'https://cdn.shopify.com/s/files/1/0611/5878/5188/files/Frozen_Bottle_Logo.png?v=1701495352'
     fb.save()
 
 items_data = [
@@ -225,7 +225,7 @@ items_data = [
         'description': 'Our signature thick shake made with authentic Belgian dark chocolate, blended to perfection for an intense experience.',
         'price': 180,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://imagedelivery.net/EtcVECyqIuOr1FjP12iTCg/eb06eec2-bf26-4b24-1bdb-5fa07c7be600/w=300'
     },
     {
         'restaurant': restaurants['Frozen Bottle'],
@@ -233,7 +233,7 @@ items_data = [
         'description': 'A refreshing blend of sun-ripened strawberries and creamy vanilla ice cream, topped with a fresh strawberry.',
         'price': 150,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1579954115545-a95591f28be0?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://static.wixstatic.com/media/567605_55130247aebd43f997572cc7dc472fb8~mv2.jpeg/v1/fill/w_256,h_256,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/567605_55130247aebd43f997572cc7dc472fb8~mv2.jpeg'
     },
     {
         'restaurant': restaurants['Frozen Bottle'],
