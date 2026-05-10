@@ -21,7 +21,7 @@ print("=" * 60)
 print("\n[1] Clearing old data...")
 Item.objects.all().delete()
 Restaurant.objects.all().delete()
-print("✓ Old items and restaurants deleted")
+print("[OK] Old items and restaurants deleted")
 
 # Step 2: Create 5 restaurants
 print("\n[2] Creating 5 restaurants...")
@@ -61,6 +61,18 @@ restaurants_data = [
         'cuisine': 'Multicultural Cuisine',
         'rating': 4.9,
         'picture': 'https://img.restaurantguru.com/ree9-Ashokas-Veggies-logo.jpg'
+    },
+    {
+        'name': 'Cake De Lite',
+        'cuisine': 'Desserts, Cakes, Bakery',
+        'rating': 4.5,
+        'picture': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80'
+    },
+    {
+        'name': 'Frozen Bottle',
+        'cuisine': 'Milkshakes, Desserts, Ice Cream',
+        'rating': 4.3,
+        'picture': 'https://images.unsplash.com/photo-1579954115545-a95591f28be0?w=800&q=80'
     }
 ]
 
@@ -68,7 +80,7 @@ restaurants = {}
 for r_data in restaurants_data:
     restaurant = Restaurant.objects.create(**r_data)
     restaurants[r_data['name']] = restaurant
-    print(f"  ✓ Created {r_data['name']} ({r_data['cuisine']})")
+    print(f"  [OK] Created {r_data['name']} ({r_data['cuisine']})")
 
 # Step 3: Create 10 menu items distributed across restaurants (2 per restaurant)
 print("\n[3] Creating 10 menu items...")
@@ -158,7 +170,6 @@ items_data = [
         'vegeterian': False,
         'picture': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuNpzLejJ8aQrhiv1xJo5ytBFZwHY3wfeKKw&s'
     },
-    # veggies (1 items)
     {
         'restaurant': restaurants['veggies'],
         'name': 'Paneer Fried Rice',
@@ -167,18 +178,84 @@ items_data = [
         'vegeterian': True,
         'picture': 'https://nishkitchen.com/wp-content/uploads/2024/05/Chilli-Paneer-fried-rice-1.jpg'
     },
+    # Cake De Lite (4 items)
+    {
+        'restaurant': restaurants['Cake De Lite'],
+        'name': 'Chocolate Truffle',
+        'description': 'Rich and creamy chocolate truffle cake.',
+        'price': 350,
+        'vegeterian': True,
+        'picture': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80'
+    },
+    {
+        'restaurant': restaurants['Cake De Lite'],
+        'name': 'Pineapple Cake',
+        'description': 'Fresh pineapple chunks with whipped cream.',
+        'price': 300,
+        'vegeterian': True,
+        'picture': 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80'
+    },
+    {
+        'restaurant': restaurants['Cake De Lite'],
+        'name': 'Red Velvet Pastry',
+        'description': 'Soft red velvet sponge with cream cheese.',
+        'price': 120,
+        'vegeterian': True,
+        'picture': 'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=800&q=80'
+    },
+    {
+        'restaurant': restaurants['Cake De Lite'],
+        'name': 'Blueberry Muffin',
+        'description': 'Oven fresh muffins with real blueberries.',
+        'price': 80,
+        'vegeterian': True,
+        'picture': 'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=800&q=80'
+    },
+    # Frozen Bottle (4 items)
+    {
+        'restaurant': restaurants['Frozen Bottle'],
+        'name': 'Belgian Chocolate',
+        'description': 'Classic thick Belgian chocolate shake.',
+        'price': 180,
+        'vegeterian': True,
+        'picture': 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&q=80'
+    },
+    {
+        'restaurant': restaurants['Frozen Bottle'],
+        'name': 'Strawberry Shake',
+        'description': 'Creamy strawberry goodness.',
+        'price': 150,
+        'vegeterian': True,
+        'picture': 'https://images.unsplash.com/photo-1543648973-1eb94fa09f48?w=800&q=80'
+    },
+    {
+        'restaurant': restaurants['Frozen Bottle'],
+        'name': 'Cold Coffee',
+        'description': 'Refreshing cold coffee with ice cream.',
+        'price': 120,
+        'vegeterian': True,
+        'picture': 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80'
+    },
+    {
+        'restaurant': restaurants['Frozen Bottle'],
+        'name': 'Oreo Overload',
+        'description': 'Thick shake loaded with Oreo crumbles.',
+        'price': 210,
+        'vegeterian': True,
+        'picture': 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&q=80'
+    },
 ]
 for item_data in items_data:
     item = Item.objects.create(**item_data)
-    print(f"  ✓ Created {item_data['name']} at {item_data['restaurant'].name}")
+    print(f"  [OK] Created {item_data['name']} at {item_data['restaurant'].name}")
 
 print("\n" + "=" * 60)
 print("DATABASE SETUP COMPLETE!")
 print("=" * 60)
-print(f"✓ Total Restaurants: {Restaurant.objects.count()}")
-print(f"✓ Total Items: {Item.objects.count()}")
+print(f"[OK] Total Restaurants: {Restaurant.objects.count()}")
+print(f"[OK] Total Items: {Item.objects.count()}")
 print("\nRestaurants:")
 for r in Restaurant.objects.all():
     item_count = Item.objects.filter(restaurant=r).count()
-    print(f"  • {r.name} ({r.cuisine}) - {item_count} items - ⭐ {r.rating}")
+    print(f"  - {r.name} ({r.cuisine}) - {item_count} items - Rating: {r.rating}")
 print("\n" + "=" * 60)
