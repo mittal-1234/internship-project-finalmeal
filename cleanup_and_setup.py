@@ -92,7 +92,7 @@ items_data = [
         'description': 'A timeless classic featuring a thin, crispy crust topped with rich San Marzano tomato sauce, fresh mozzarella pearls, and fragrant basil leaves.',
         'price': 299,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1574129623612-9865b206677a?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Dominos Pizza'],
@@ -100,7 +100,7 @@ items_data = [
         'description': 'The ultimate crowd-pleaser! Loaded with spicy, zesty pepperoni slices and a mountain of melted mozzarella cheese on our signature hand-tossed dough.',
         'price': 349,
         'vegeterian': False,
-        'picture': 'https://images.unsplash.com/photo-1628840042765-356cda07f4ee?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=1000&auto=format&fit=crop'
     },
     # Belgium Waffle House (2 items)
     {
@@ -109,7 +109,7 @@ items_data = [
         'description': 'Indulge in a warm, crispy Belgian waffle drenched in premium dark chocolate ganache, topped with chocolate shavings.',
         'price': 199,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1584947848229-798aa1c2965f?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1593531182844-d2ad0d03b0c5?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Belgium Waffle House'],
@@ -134,7 +134,7 @@ items_data = [
         'description': 'A protein-packed garden patty made with fresh vegetables and grains, topped with avocado, sprouts, and vegan aioli on a whole-grain bun.',
         'price': 229,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1585238341710-4913de44e5a8?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1520072959219-c595dc870360?q=80&w=1000&auto=format&fit=crop'
     },
     # Paneer House (2 items)
     {
@@ -143,7 +143,7 @@ items_data = [
         'description': 'Succulent cubes of cottage cheese marinated in a spicy yogurt blend, char-grilled to perfection in a traditional tandoor for a smoky flavor.',
         'price': 299,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.pexels.com/photos/3928854/pexels-photo-3928854.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     {
         'restaurant': restaurants['Paneer House'],
@@ -151,7 +151,7 @@ items_data = [
         'description': 'A world-famous North Indian delicacy! Tender chicken pieces simmered in a rich, velvety tomato and butter gravy.',
         'price': 349,
         'vegeterian': False,
-        'picture': 'https://images.unsplash.com/photo-1603894527134-99e44e39196e?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.pexels.com/photos/29685054/pexels-photo-29685054.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     # Chinese Express (2 items)
     {
@@ -160,7 +160,7 @@ items_data = [
         'description': 'Wok-tossed thin noodles with a colorful array of crisp vegetables, seasoned with aromatic Indo-Chinese spices and soy sauce.',
         'price': 189,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.pexels.com/photos/2764905/pexels-photo-2764905.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     {
         'restaurant': restaurants['Chinese Express'],
@@ -168,7 +168,7 @@ items_data = [
         'description': 'Fragrant stir-fried rice with tender chicken bits, scrambled eggs, and fresh spring onions for a perfect savory meal.',
         'price': 229,
         'vegeterian': False,
-        'picture': 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.pexels.com/photos/34668502/pexels-photo-34668502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     {
         'restaurant': restaurants['veggies'],
@@ -176,7 +176,7 @@ items_data = [
         'description': 'A vegetarian favorite! Aromatic rice tossed with cubes of golden-fried paneer and fresh garden vegetables in a savory sauce.',
         'price': 189,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.pexels.com/photos/31783383/pexels-photo-31783383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
     },
     # Cake De Lite (4 items)
     {
@@ -185,7 +185,7 @@ items_data = [
         'description': 'A decadent masterpiece for chocolate lovers. Layers of moist cocoa sponge filled and frosted with silky dark chocolate truffle cream.',
         'price': 350,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1548943487-a2e4e43b4853?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Cake De Lite'],
@@ -193,7 +193,7 @@ items_data = [
         'description': 'A tropical delight featuring light vanilla sponge soaked in pineapple juice, layered with fresh pineapple chunks and whipped cream.',
         'price': 300,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1601662528567-526cd06f6582?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Cake De Lite'],
@@ -209,7 +209,7 @@ items_data = [
         'description': 'Bursting with fresh blueberries, these buttery muffins feature a hint of lemon zest and a crunchy streusel topping.',
         'price': 80,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1607958996333-41aef7caefaa?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&w=1000&auto=format&fit=crop'
     },
     # Frozen Bottle (4 items)
     {
@@ -218,7 +218,7 @@ items_data = [
         'description': 'Our signature thick shake made with authentic Belgian dark chocolate, blended to perfection for an intense experience.',
         'price': 180,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Frozen Bottle'],
@@ -226,7 +226,7 @@ items_data = [
         'description': 'A refreshing blend of sun-ripened strawberries and creamy vanilla ice cream, topped with a fresh strawberry.',
         'price': 150,
         'vegeterian': True,
-        'picture': 'https://images.unsplash.com/photo-1543648973-1eb94fa09f48?q=80&w=1000&auto=format&fit=crop'
+        'picture': 'https://images.unsplash.com/photo-1553177595-462f4a3ea578?q=80&w=1000&auto=format&fit=crop'
     },
     {
         'restaurant': restaurants['Frozen Bottle'],
