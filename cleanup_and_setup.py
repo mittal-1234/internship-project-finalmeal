@@ -309,7 +309,7 @@ items_data = [
         'description': 'A vegetarian favorite! Aromatic rice tossed with cubes of golden-fried paneer and fresh garden vegetables.',
         'price': 189,
         'vegeterian': True,
-        'picture': 'https://images.pexels.com/photos/31783383/pexels-photo-31783383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+        'picture': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMUSOkW6xq2izua5XRhxKlwMydHly1iBIxxg&s'
     },
     {
         'restaurant': restaurants['veggies'],
@@ -341,7 +341,7 @@ items_data = [
         'description': 'Light and aromatic rice cooked with seasonal vegetables and mild whole spices. A healthy, wholesome choice.',
         'price': 179,
         'vegeterian': True,
-        'picture': 'https://images.pexels.com/photos/35041645/pexels-photo-35041645.jpeg?auto=compress&cs=tinysrgb&w=800'
+        'picture': 'https://vegecravings.com/wp-content/uploads/2016/07/veg-pulao-recipe-step-by-step-instructions.jpg'
     },
 
     # Cake De Lite (5 items)

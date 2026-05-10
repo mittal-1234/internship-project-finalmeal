@@ -43,11 +43,11 @@ mapping = {
     'Spring Rolls': 'https://images.pexels.com/photos/35407775/pexels-photo-35407775.jpeg?auto=compress&cs=tinysrgb&w=800',
     'Chili Chicken': 'https://images.pexels.com/photos/5339083/pexels-photo-5339083.jpeg?auto=compress&cs=tinysrgb&w=800',
     # veggies (5)
-    'Paneer Fried Rice': 'https://images.pexels.com/photos/31783383/pexels-photo-31783383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    'Paneer Fried Rice': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMUSOkW6xq2izua5XRhxKlwMydHly1iBIxxg&s',
     'Vegetable Biryani': 'https://images.pexels.com/photos/9609848/pexels-photo-9609848.jpeg?auto=compress&cs=tinysrgb&w=800',
     'Masala Dosa': 'https://images.pexels.com/photos/12392915/pexels-photo-12392915.jpeg?auto=compress&cs=tinysrgb&w=800',
     'Chole Bhature': 'https://images.pexels.com/photos/36388454/pexels-photo-36388454.jpeg?auto=compress&cs=tinysrgb&w=800',
-    'Veg Pulao': 'https://images.pexels.com/photos/35041645/pexels-photo-35041645.jpeg?auto=compress&cs=tinysrgb&w=800',
+    'Veg Pulao': 'https://vegecravings.com/wp-content/uploads/2016/07/veg-pulao-recipe-step-by-step-instructions.jpg',
     # Cake De Lite (5)
     'Chocolate Truffle': 'https://images.pexels.com/photos/34802628/pexels-photo-34802628.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     'Pineapple Cake': 'https://images.pexels.com/photos/8820012/pexels-photo-8820012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
