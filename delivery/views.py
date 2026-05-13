@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, JsonResponse
 import random
 import json
@@ -163,6 +163,16 @@ def add_to_cart(request, item_id, username):
     cart.items.add(item)
 
     return HttpResponse('added to cart')
+
+def remove_from_cart(request, item_id, username):
+    item = get_object_or_404(Item, id=item_id)
+    customer = get_object_or_404(Customer, username=username)
+    cart = Cart.objects.filter(customer=customer).first()
+    
+    if cart:
+        cart.items.remove(item)
+        
+    return redirect('show_cart', username=username)
 
 def show_cart(request, username):
     customer = Customer.objects.get(username = username)

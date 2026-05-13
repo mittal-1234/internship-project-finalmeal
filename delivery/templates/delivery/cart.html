@@ -18,8 +18,11 @@
                 <h4 style="margin: 0 0 0.5rem;">{{ item.name }}</h4>
                 <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0 0 1rem;">{{ item.description }}</p>
             </div>
-            <div class="item-footer">
+            <div class="item-footer" style="display: flex; justify-content: space-between; align-items: center;">
                 <span class="item-price">₹{{ item.price }}</span>
+                <a href="{% url 'remove_from_cart' item.id username %}" class="remove-btn" style="color: #ef4444; background: rgba(239, 68, 68, 0.1); padding: 0.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" title="Remove item">
+                    <i class="fas fa-trash"></i>
+                </a>
             </div>
         </div>
         {% endfor %}
